@@ -1,3 +1,5 @@
+import 'package:cat_task2/Detail.dart';
+
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
@@ -49,80 +51,87 @@ class _LayoutState extends State<Layout> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-            Text('Hello,john', style: TextStyle(fontSize: 35,
-              fontWeight: FontWeight.bold,
-              color: Colors.white),),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 4, horizontal: 4),
-            padding: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.circular(8)),
-            //color of container tasks(dark mode change)
-            child: Row(
-              children: [
-                SizedBox(
-                  width: 4,
-                ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  child: Stack(
-                    alignment: Alignment.bottomRight,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(5), // Border width
-                        decoration: BoxDecoration(color: Colors.white,
-                            shape: BoxShape.circle),
-                        child: ClipOval(
-                          child: SizedBox.fromSize(
-                            size: Size.fromRadius(20), // Image radius
-                            child: Image.asset(
-                                'assets/me.jpg', fit: BoxFit.cover),
+
+              Text('Hello,john', style: TextStyle(fontSize: 35,
+                fontWeight: FontWeight.bold,
+                color: Colors.white),),
+
+          InkWell(
+            onTap: (){
+              Navigator.pushNamed(context, Detail.routName);
+            },
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 4, horizontal: 4),
+              padding: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.circular(8)),
+              //color of container tasks(dark mode change)
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 4,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 50,
+                    child: Stack(
+                      alignment: Alignment.bottomRight,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(5), // Border width
+                          decoration: BoxDecoration(color: Colors.white,
+                              shape: BoxShape.circle),
+                          child: ClipOval(
+                            child: SizedBox.fromSize(
+                              size: Size.fromRadius(20), // Image radius
+                              child: Image.asset(
+                                  'assets/me.jpg', fit: BoxFit.cover),
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        //alignment: Alignment.bottomRight,
-                        height: 15,
-                        width: 15,
-                        padding: EdgeInsets.all(5), // Border width
-                        decoration: BoxDecoration(color: Colors.green,
-                            shape: BoxShape.circle),
+                        Container(
+                          //alignment: Alignment.bottomRight,
+                          height: 15,
+                          width: 15,
+                          padding: EdgeInsets.all(5), // Border width
+                          decoration: BoxDecoration(color: Colors.green,
+                              shape: BoxShape.circle),
 
-                        // color: Colors.green,
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'YOUR BALANCE', style: TextStyle(fontSize: 15,
-                          color: Colors.orange,
-                          //Color(0xFF5D9CEC),
-                          fontWeight: FontWeight.w400,),
-
-                        ),
-                        Text(
-                            'S23,052.82',
-                            style: TextStyle(fontSize: 25, color: Colors
-                                .white)
-                        ),
+                          // color: Colors.green,
+                        )
                       ],
-                    )),
-                Spacer(),
-                Icon(Icons.arrow_forward_ios, color: Colors.white),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'YOUR BALANCE', style: TextStyle(fontSize: 15,
+                            color: Colors.orange,
+                            //Color(0xFF5D9CEC),
+                            fontWeight: FontWeight.w400,),
 
-              ],
+                          ),
+                          Text(
+                              'S23,052.82',
+                              style: TextStyle(fontSize: 25, color: Colors
+                                  .white)
+                          ),
+                        ],
+                      )),
+                  Spacer(),
+                  Icon(Icons.arrow_forward_ios, color: Colors.white),
+
+                ],
+              ),
+
+
             ),
-
-
           ),
           SizedBox(height: 20,),
           Row(

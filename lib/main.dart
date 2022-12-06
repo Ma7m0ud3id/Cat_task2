@@ -1,5 +1,6 @@
+import 'package:cat_task2/Detail.dart';
 import 'package:cat_task2/Layout.dart';
-import 'package:cat_task2/PersonDetails.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       initialRoute: Layout.routName,
       routes: {
         Layout.routName:(v)=>Layout(),
-        PersonDetails.routName:(c)=>Layout(),
+
+        Detail.routName:(v)=>Detail(),
         },
     );
   }
